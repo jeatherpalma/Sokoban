@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2d682a9-42e0-42d8-aeb3-b449b09bceb2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Test/TestSokoban.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/clases/Movimientos.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/clases/Sokoban.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/clasesArboles/Arbol.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/clasesArboles/Node.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sokoban/Test/TestSokoban.class" afterPath="$PROJECT_DIR$/out/production/Sokoban/Test/TestSokoban.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sokoban/clases/Movimientos.class" afterPath="$PROJECT_DIR$/out/production/Sokoban/clases/Movimientos.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clases/Movimientos.java" afterPath="$PROJECT_DIR$/src/clases/Movimientos.java" />
     </list>
     <ignored path="Sokoban.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,10 +40,15 @@
       <file leaf-file-name="Movimientos.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/clases/Movimientos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.024549918">
-              <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.32733223">
+              <caret line="298" column="75" selection-start-line="298" selection-start-column="75" selection-end-line="298" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#nuevaMatriz#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveIzquierda#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveDerecha#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveArriba#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveAbajo#0;class#Movimientos#0" expanded="false" />
                 <element signature="method#convierteMatrizString#0;class#Movimientos#0" expanded="false" />
                 <element signature="method#convierteMatrizStringEvitaPlayer#0;class#Movimientos#0" expanded="false" />
                 <element signature="method#busquedaNodos#0;class#Movimientos#0" expanded="false" />
@@ -54,6 +56,17 @@
                 <element signature="method#mueveCajaAbajo#0;class#Movimientos#0" expanded="false" />
                 <element signature="method#mueveCajaIzquierda#0;class#Movimientos#0" expanded="false" />
                 <element signature="method#mueveCajaDerecha#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveCajaAbajo2#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveCajaIzquierda2#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveCajaDerecha2#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveIzquierdaConPunto#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveDerechaConPunto#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveArribaConPunto#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveAbajoConPunto#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveIzquierdaConPuntoCaja#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveDerechaConPuntoCaja#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveArribaConPuntoCaja#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#mueveAbajoConPuntoCaja#0;class#Movimientos#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -63,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/src/Test/TestSokoban.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -89,9 +102,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Test/TestSokoban.java" />
         <option value="$PROJECT_DIR$/src/clasesArboles/Node.java" />
         <option value="$PROJECT_DIR$/src/clases/Sokoban.java" />
+        <option value="$PROJECT_DIR$/src/Test/TestSokoban.java" />
         <option value="$PROJECT_DIR$/src/clases/Movimientos.java" />
       </list>
     </option>
@@ -514,7 +527,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="26" width="1368" height="743" extended-state="6" />
+    <frame x="-1" y="26" width="1368" height="743" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -578,7 +591,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -587,14 +600,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Test/TestSokoban.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/clasesArboles/Arbol.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -619,12 +624,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Test/TestSokoban.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/clases/Movimientos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.024549918">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.32733223">
+          <caret line="298" column="75" selection-start-line="298" selection-start-column="75" selection-end-line="298" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#nuevaMatriz#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveIzquierda#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveDerecha#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveArriba#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveAbajo#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizString#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizStringEvitaPlayer#0;class#Movimientos#0" expanded="false" />
             <element signature="method#busquedaNodos#0;class#Movimientos#0" expanded="false" />
@@ -632,6 +650,17 @@
             <element signature="method#mueveCajaAbajo#0;class#Movimientos#0" expanded="false" />
             <element signature="method#mueveCajaIzquierda#0;class#Movimientos#0" expanded="false" />
             <element signature="method#mueveCajaDerecha#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveCajaAbajo2#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveCajaIzquierda2#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveCajaDerecha2#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveIzquierdaConPunto#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveDerechaConPunto#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveArribaConPunto#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveAbajoConPunto#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveIzquierdaConPuntoCaja#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveDerechaConPuntoCaja#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveArribaConPuntoCaja#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#mueveAbajoConPuntoCaja#0;class#Movimientos#0" expanded="false" />
           </folding>
         </state>
       </provider>
