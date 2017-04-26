@@ -30,6 +30,10 @@ public class Sokoban {
             }
             System.out.println();
         }
+
+
+
+
         createSolution();
         mv.getPlayer(ancho,alto,tablero,solucion);
 

@@ -14,7 +14,7 @@ public class Arbol {
 	}
 	
 	//Agrega un nuevo arbol
-	public static Node nuevoArbol(Node nodoPadre, int[][] dato){
+	public static Node nuevoArbol(Node nodoPadre, String[][] dato){
 			return new Node(nodoPadre, dato);
 	}
 

@@ -3,18 +3,18 @@ package clasesArboles;
 
 public class Node {
 	Node nodo;
-	int [][] puzzle;
+	String [][] sokoban;
 	public int profundidad=0;
 	
 	/////////Crea un nuevo nodo raiz
-	public Node(int [][]puzzle){
-		this.puzzle = puzzle;
+	public Node(String [][]sokoban){
+		this.sokoban = sokoban;
 		this.nodo = null;
 	}	
 	/////////Crea un nuevo nodo con referencia al padre
-	public Node(Node nodo, int[][] puzzle){
+	public Node(Node nodo, String[][] sokoban){
 		this.nodo = nodo;
-		this.puzzle = puzzle;
+		this.sokoban = sokoban;
 		
 	}
 	//Regresa el padre de cualquier nodo
@@ -39,9 +39,9 @@ public class Node {
 	}
 	
 	
-	//Regresa el puzzle del nodo
-	public int [][] getPuzzle(){
-		return puzzle;
+	//Regresa el sokoban del nodo
+	public String [][] getsokoban(){
+		return sokoban;
 	}
 	
 	
