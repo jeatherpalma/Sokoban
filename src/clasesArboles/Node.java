@@ -5,6 +5,7 @@ public class Node {
 	Node nodo;
 	String [][] sokoban;
 	public int profundidad=0;
+	String movimiento;
 	
 	/////////Crea un nuevo nodo raiz
 	public Node(String [][]sokoban){
@@ -12,10 +13,10 @@ public class Node {
 		this.nodo = null;
 	}	
 	/////////Crea un nuevo nodo con referencia al padre
-	public Node(Node nodo, String[][] sokoban){
+	public Node(Node nodo, String[][] sokoban, String movimiento){
 		this.nodo = nodo;
 		this.sokoban = sokoban;
-		
+		this.movimiento = movimiento;
 	}
 	//Regresa el padre de cualquier nodo
 	public Node getPadre(){
@@ -42,6 +43,11 @@ public class Node {
 	//Regresa el sokoban del nodo
 	public String [][] getsokoban(){
 		return sokoban;
+	}
+
+	//Regresa el movimiento
+	public String getMovimiento(){
+		return movimiento;
 	}
 	
 	

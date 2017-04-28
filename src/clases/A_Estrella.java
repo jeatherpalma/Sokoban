@@ -22,6 +22,7 @@ public class A_Estrella {
             } else {
             }
         }
+
         return posicion;
     }
 
@@ -38,7 +39,7 @@ public class A_Estrella {
                 if(game[i][j].equals("C")){
                     for(int x=0; x<alto; x++){
                         for (int y=0; y<ancho; y++){
-                            if(game[x][y].equals(".")){
+                            if(game[x][y].equals(".") || game[x][y].equals("P.")){
                                 int distancia = Math.abs(i-x)+Math.abs(j-y);
                                 auxiliarSuma = Menor(distancia,auxiliarSuma);
 
@@ -71,10 +72,14 @@ public class A_Estrella {
 
 
         //Suma del costo para llegar al nodo a manhattan
+        sumaDistanciaManhattan=sumaDistanciaManhattan-1;
         while(aux!=null){
             sumaDistanciaManhattan += 1;
             aux=aux.getProfundidad2(aux);
 
+        }
+        if (detectaCajasEstancadas(game, ancho, alto)){
+            sumaDistanciaManhattan+=1000;
         }
         return sumaDistanciaManhattan;
     }
@@ -94,6 +99,22 @@ public class A_Estrella {
         }else{
             return b;
         }
+    }
+
+    public boolean detectaCajasEstancadas(String game[][], int ancho, int alto){
+        boolean ban = false;
+        for (int i = 0; i < alto; i++) {
+            for (int j = 0; j < ancho; j++) {
+                if(game[i][j]=="C"){
+                    if(game[i][j-1]=="#" && game[i-1][j]=="#" || game[i][j-1]=="#" && game[i+1][j]=="#" ||game[i][j+1]=="#" && game[i-1][j]=="#"
+                            ||game[i][j+1]=="#" && game[i+1][j]=="#"){
+                        ban=true;
+                    }
+                }
+            }
+        }
+
+        return ban;
     }
 }
 

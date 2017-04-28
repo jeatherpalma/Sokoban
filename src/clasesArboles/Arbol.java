@@ -14,8 +14,8 @@ public class Arbol {
 	}
 	
 	//Agrega un nuevo arbol
-	public static Node nuevoArbol(Node nodoPadre, String[][] dato){
-			return new Node(nodoPadre, dato);
+	public static Node nuevoArbol(Node nodoPadre, String[][] dato,String movimiento){
+			return new Node(nodoPadre, dato, movimiento);
 	}
 
 	//Optine el padre de cualquier nodo
