@@ -44,8 +44,8 @@ public class TestSokoban {
                            {"#"," "," ","C"," "," ",".","#"},
                            {"#","#","#","#","#","#","#","#"}};
 
-        //Sokoban sk = new Sokoban(8,6,game3);
-        Sokoban sk = new Sokoban(6,8,game);
+        Sokoban sk = new Sokoban(8,6,game3);
+        //Sokoban sk = new Sokoban(6,8,game);
         //Sokoban sk = new Sokoban(6,8,game4);
     }
 }

@@ -110,6 +110,7 @@ public class Movimientos {
                         }
                     }
                 }
+
                 //Mueve la caja arriba
                 if (juego[posicionX - 1][posicionY] == "C") {
                     if(juego[posicionX-2][posicionY]!="#" && juego[posicionX-2][posicionY]!=" " ){
@@ -142,7 +143,7 @@ public class Movimientos {
                 //Mueve la caja abajo
                 if (juego[posicionX +1][posicionY] == "C") {
                     if(juego[posicionX+2][posicionY]!="#"&& juego[posicionX+2][posicionY]!=" " ){
-                        if(juego[posicionX-2][posicionY]=="."){
+                        if(juego[posicionX+2][posicionY]=="."){
                             matAbajo = mueveCajaAbajo(matAbajo, alto, ancho);
                             matGiradaAbajo = convierteMatrizString(matAbajo, alto, ancho);
                             //Checa si ya se encuentra en el historial
@@ -492,12 +493,23 @@ public class Movimientos {
             for (int j = 1; j < ancho; j++) {
 
                 if(mat[i][j]=="P"){
-
                         mat[i][j] = " ";
                         mat[i - 1][j] = "P";
                         mat[i - 2][j] = "C.";
                         i = alto;
                         break;
+
+                }
+                if(mat[i][j]=="P."){
+                    mat[i][j] = ".";
+                    if(mat[i - 1][j]=="C"){
+                        mat[i - 1][j] ="P";
+                    } else if(mat[i - 1][j]=="C."){
+                        mat[i - 1][j] ="P.";
+                    }
+                    mat[i - 2][j] = "C.";
+                    i = alto;
+                    break;
 
                 }
             }
@@ -515,6 +527,18 @@ public class Movimientos {
                         break;
 
                 }
+                if(mat[i][j]=="P."){
+                    mat[i][j] = ".";
+                    if(mat[i + 1][j]=="C"){
+                        mat[i+1][j] ="P";
+                    } else if(mat[i + 1][j]=="C."){
+                        mat[i +1][j] ="P.";
+                    }
+                    mat[i+2][j] = "C.";
+                    i = alto;
+                    break;
+
+                }
             }
         }
         return mat;
@@ -529,6 +553,18 @@ public class Movimientos {
                     mat[i][j-2]="C.";
                     i=alto;
                     break;
+                }
+                if(mat[i][j]=="P."){
+                    mat[i][j] = ".";
+                    if(mat[j][j-1]=="C"){
+                        mat[i][j-1] ="P";
+                    } else if(mat[i][j-1]=="C."){
+                        mat[i][j-1] ="P.";
+                    }
+                    mat[i][j-2] = "C.";
+                    i = alto;
+                    break;
+
                 }
             }
         }
@@ -545,6 +581,18 @@ public class Movimientos {
                     i=alto;
                     break;
                 }
+                if(mat[i][j]=="P."){
+                    mat[i][j] = ".";
+                    if(mat[j][j+1]=="C"){
+                        mat[i][j+1] ="P";
+                    } else if(mat[i][j+1]=="C."){
+                        mat[i][j+1] ="P.";
+                    }
+                    mat[i][j+2] = "C.";
+                    i = alto;
+                    break;
+
+                }
             }
         }
         return mat;
@@ -560,6 +608,13 @@ public class Movimientos {
                     i=alto;
                     break;
                 }
+                if(mat[i][j]=="P."){
+                    mat[i][j] = ".";
+                    mat[i-1][j]="P";
+                    mat[i-2][j]="C";
+                    i=alto;
+                    break;
+                }
             }
         }
         return mat;
@@ -570,6 +625,13 @@ public class Movimientos {
             for (int j = 1; j < ancho; j++) {
                 if(game[i][j]=="P"){
                     game[i][j] = " ";
+                    game[i+1][j]="P";
+                    game[i+2][j]="C";
+                    i=alto;
+                    break;
+                }
+                if(game[i][j]=="P."){
+                    game[i][j] = ".";
                     game[i+1][j]="P";
                     game[i+2][j]="C";
                     i=alto;
@@ -591,6 +653,13 @@ public class Movimientos {
                     i=alto;
                     break;
                 }
+                if(mat[i][j]=="P."){
+                    mat[i][j] = ".";
+                    mat[i][j-1]="P";
+                    mat[i][j-2]="C";
+                    i=alto;
+                    break;
+                }
             }
         }
         return mat;
@@ -601,6 +670,13 @@ public class Movimientos {
             for (int j = 1; j < ancho; j++) {
                 if(mat[i][j]=="P"){
                     mat[i][j] = " ";
+                    mat[i][j+1]="P";
+                    mat[i][j+2]="C";
+                    i=alto;
+                    break;
+                }
+                if(mat[i][j]=="P."){
+                    mat[i][j] = ".";
                     mat[i][j+1]="P";
                     mat[i][j+2]="C";
                     i=alto;
@@ -809,16 +885,6 @@ public class Movimientos {
         return mat;
     }
 
-    //Imprime tablero
-    public void ImprimeTablero(int ancho, int alto, String game [][]){
-        System.out.println("Tablero del nivel: ");
-        for (int i=0; i<ancho; i++){
-            for (int j=0; j<alto; j++){
-                System.out.print(game[i][j]+ " ");
-            }
-            System.out.println();
-        }
-    }
 
     public boolean detectaCajasEstancadas(String game[][], int ancho, int alto){
         boolean ban = false;
