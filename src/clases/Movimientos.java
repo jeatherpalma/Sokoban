@@ -63,43 +63,51 @@ public class Movimientos {
                     matGiradaIzquierda = convierteMatrizString(matIzquierda, alto, ancho);
 
                     //Checa si ya se encuentra en el historial
-                    if(busquedaNodos(matGiradaIzquierda)){
-                        matExpandor.add(matIzquierda);
-                        historial2.put(matGiradaIzquierda,matGiradaIzquierda);
-                        movimientos.add("Izquierda blanco");
+                    if (!detectaCajasEstancadas(matIzquierda,alto,ancho)) {
+                        if (busquedaNodos(matGiradaIzquierda)) {
+                            matExpandor.add(matIzquierda);
+                            historial2.put(matGiradaIzquierda, matGiradaIzquierda);
+                            movimientos.add("Izquierda blanco");
+                        }
                     }
                 }
                 //Mueve al jugador derecha
                 if (juego[posicionX][posicionY + 1] == " ") {
                     matDerecha = mueveDerecha(matDerecha, alto, ancho);
                     matGiradaDerecha = convierteMatrizString(matDerecha, alto, ancho);
-
-                    if(busquedaNodos(matGiradaDerecha)){
-                        matExpandor.add(matDerecha);
-                        historial2.put(matGiradaDerecha,matGiradaDerecha);
-                        movimientos.add("Derecha blanco");
+                    //Checa si ya se encuentra en el historial
+                    if (!detectaCajasEstancadas(matDerecha,alto,ancho)) {
+                        if (busquedaNodos(matGiradaDerecha)) {
+                            matExpandor.add(matDerecha);
+                            historial2.put(matGiradaDerecha, matGiradaDerecha);
+                            movimientos.add("Derecha blanco");
+                        }
                     }
                 }
                 //Mueve al jugador abajo
                 if (juego[posicionX + 1][posicionY] == " ") {
                     matAbajo = mueveAbajo(matAbajo, alto, ancho);
                     matGiradaAbajo = convierteMatrizString(matAbajo, alto, ancho);
-
-                    if(busquedaNodos(matGiradaAbajo)){
-                        matExpandor.add(matAbajo);
-                        historial2.put(matGiradaAbajo,matGiradaAbajo);
-                        movimientos.add("Abajo blanco");
+                    //Checa si ya se encuentra en el historial
+                    if (!detectaCajasEstancadas(matAbajo,alto,ancho)) {
+                        if (busquedaNodos(matGiradaAbajo)) {
+                            matExpandor.add(matAbajo);
+                            historial2.put(matGiradaAbajo, matGiradaAbajo);
+                            movimientos.add("Abajo blanco");
+                        }
                     }
                 }
                 //Mueve al jugador arriba
                 if (juego[posicionX - 1][posicionY] == " ") {
                     matArriba = mueveArriba(matArriba, alto, ancho);
                     matGiradaArriba = convierteMatrizString(matArriba, alto, ancho);
-
-                    if(busquedaNodos(matGiradaArriba)){
-                        matExpandor.add(matArriba);
-                        historial2.put(matGiradaArriba,matGiradaArriba);
-                        movimientos.add("Arriba blanco");
+                    //Checa si ya se encuentra en el historial
+                    if (!detectaCajasEstancadas(matArriba,alto,ancho)) {
+                        if (busquedaNodos(matGiradaArriba)) {
+                            matExpandor.add(matArriba);
+                            historial2.put(matGiradaArriba, matGiradaArriba);
+                            movimientos.add("Arriba blanco");
+                        }
                     }
                 }
                 //Mueve la caja arriba
@@ -108,19 +116,26 @@ public class Movimientos {
                         if(juego[posicionX-2][posicionY]=="."){
                             matArriba = mueveCajaArriba(matArriba, alto, ancho);
                             matGiradaArriba = convierteMatrizString(matArriba, alto, ancho);
-                            if(busquedaNodos(matGiradaArriba)){
-                                matExpandor.add(matArriba);
-                                historial2.put(matGiradaArriba,matGiradaArriba);
-                                movimientos.add("Arriba caja");
+                            //Checa si ya se encuentra en el historial
+                            if (!detectaCajasEstancadas(matArriba,alto,ancho)) {
+                                if (busquedaNodos(matGiradaArriba)) {
+                                    matExpandor.add(matArriba);
+                                    historial2.put(matGiradaArriba, matGiradaArriba);
+                                    movimientos.add("Arriba caja");
+                                }
                             }
                         }
                     }else if(juego[posicionX-2][posicionY]==" " ){
                         matArriba = mueveCajaArriba2(matArriba, alto, ancho);
                         matGiradaArriba = convierteMatrizString(matArriba, alto, ancho);
-                        if(busquedaNodos(matGiradaArriba)){
-                            matExpandor.add(matArriba);
-                            historial2.put(matGiradaArriba,matGiradaArriba);
-                            movimientos.add("Arriba caja");
+                        //Checa si ya se encuentra en el historial
+                        if (!detectaCajasEstancadas(matArriba,alto,ancho)) {
+                            if (busquedaNodos(matGiradaArriba)) {
+                                matExpandor.add(matArriba);
+                                historial2.put(matGiradaArriba, matGiradaArriba);
+                                movimientos.add("Arriba caja");
+                            }
+
                         }
                     }
                 }
@@ -130,10 +145,13 @@ public class Movimientos {
                         if(juego[posicionX-2][posicionY]=="."){
                             matAbajo = mueveCajaAbajo(matAbajo, alto, ancho);
                             matGiradaAbajo = convierteMatrizString(matAbajo, alto, ancho);
-                            if(busquedaNodos(matGiradaAbajo)){
-                                matExpandor.add(matAbajo);
-                                historial2.put(matGiradaAbajo,matGiradaAbajo);
-                                movimientos.add("Abajo caja");
+                            //Checa si ya se encuentra en el historial
+                            if (!detectaCajasEstancadas(matAbajo,alto,ancho)) {
+                                if (busquedaNodos(matGiradaAbajo)) {
+                                    matExpandor.add(matAbajo);
+                                    historial2.put(matGiradaAbajo, matGiradaAbajo);
+                                    movimientos.add("Abajo caja");
+                                }
                             }
                         }
                     }else if(juego[posicionX+2][posicionY]==" " ){
@@ -142,12 +160,14 @@ public class Movimientos {
                         matAbajo = mueveCajaAbajo2(matAbajo, alto, ancho);
 
                         matGiradaAbajo = convierteMatrizString(matAbajo, alto, ancho);
+                        //Checa si ya se encuentra en el historial
+                        if (!detectaCajasEstancadas(matAbajo,alto,ancho)) {
+                            if (busquedaNodos(matGiradaAbajo)) {
 
-                        if(busquedaNodos(matGiradaAbajo)){
-
-                            matExpandor.add(matAbajo);
-                            historial2.put(matGiradaAbajo,matGiradaAbajo);
-                            movimientos.add("Abajo caja");
+                                matExpandor.add(matAbajo);
+                                historial2.put(matGiradaAbajo, matGiradaAbajo);
+                                movimientos.add("Abajo caja");
+                            }
                         }
                     }
                 }
@@ -158,19 +178,25 @@ public class Movimientos {
                         if(juego[posicionX][posicionY+2]==".") {
                             matDerecha = mueveCajaDerecha(matDerecha, alto, ancho);
                             matGiradaDerecha = convierteMatrizString(matDerecha, alto, ancho);
-                            if(busquedaNodos(matGiradaDerecha)){
-                                matExpandor.add(matDerecha);
-                                historial2.put(matGiradaDerecha,matGiradaDerecha);
-                                movimientos.add("Derecha caja");
+                            //Checa si ya se encuentra en el historial
+                            if (!detectaCajasEstancadas(matDerecha,alto,ancho)) {
+                                if (busquedaNodos(matGiradaDerecha)) {
+                                    matExpandor.add(matDerecha);
+                                    historial2.put(matGiradaDerecha, matGiradaDerecha);
+                                    movimientos.add("Derecha caja");
+                                }
                             }
                         }
                     }else if(juego[posicionX][posicionY+2]==" " ){
                         matDerecha = mueveCajaDerecha2(matDerecha, alto, ancho);
                         matGiradaDerecha = convierteMatrizString(matDerecha, alto, ancho);
-                        if(busquedaNodos(matGiradaDerecha)){
-                            matExpandor.add(matDerecha);
-                            historial2.put(matGiradaDerecha,matGiradaDerecha);
-                            movimientos.add("Derecha caja");
+                        //Checa si ya se encuentra en el historial
+                        if (!detectaCajasEstancadas(matDerecha,alto,ancho)) {
+                            if (busquedaNodos(matGiradaDerecha)) {
+                                matExpandor.add(matDerecha);
+                                historial2.put(matGiradaDerecha, matGiradaDerecha);
+                                movimientos.add("Derecha caja");
+                            }
                         }
                     }
                 }
@@ -181,20 +207,26 @@ public class Movimientos {
                         if(juego[posicionX][posicionY-2]==".") {
                             matIzquierda = mueveCajaIzquierda(matIzquierda, alto, ancho);
                             matGiradaIzquierda = convierteMatrizString(matIzquierda, alto, ancho);
-                            if(busquedaNodos(matGiradaIzquierda)){
-                                matExpandor.add(matIzquierda);
-                                historial2.put(matGiradaIzquierda,matGiradaIzquierda);
-                                movimientos.add("Izquierda");
+                            //Checa si ya se encuentra en el historial
+                            if (!detectaCajasEstancadas(matIzquierda,alto,ancho)) {
+                                if (busquedaNodos(matGiradaIzquierda)) {
+                                    matExpandor.add(matIzquierda);
+                                    historial2.put(matGiradaIzquierda, matGiradaIzquierda);
+                                    movimientos.add("Izquierda");
+                                }
                             }
                         }
 
                     }else if(juego[posicionX][posicionY-2]==" " ){
                         matIzquierda = mueveCajaIzquierda2(matIzquierda, alto, ancho);
                         matGiradaIzquierda = convierteMatrizString(matIzquierda, alto, ancho);
-                        if(busquedaNodos(matGiradaIzquierda)){
-                            matExpandor.add(matIzquierda);
-                            historial2.put(matGiradaIzquierda,matGiradaIzquierda);
-                            movimientos.add("Izquierda");
+                        //Checa si ya se encuentra en el historial
+                        if (!detectaCajasEstancadas(matIzquierda,alto,ancho)) {
+                            if (busquedaNodos(matGiradaIzquierda)) {
+                                matExpandor.add(matIzquierda);
+                                historial2.put(matGiradaIzquierda, matGiradaIzquierda);
+                                movimientos.add("Izquierda");
+                            }
                         }
                     }
                 }
@@ -204,10 +236,13 @@ public class Movimientos {
                 if (juego[posicionX][posicionY - 1] == ".") {
                     matIzquierda = mueveIzquierdaConPunto(matIzquierda, alto, ancho);
                     matGiradaIzquierda = convierteMatrizString(matIzquierda, alto, ancho);
-                    if(busquedaNodos(matGiradaIzquierda)){
-                        matExpandor.add(matIzquierda);
-                        historial2.put(matGiradaIzquierda,matGiradaIzquierda);
-                        movimientos.add("Izquierda");
+                    //Checa si ya se encuentra en el historial
+                    if (!detectaCajasEstancadas(matIzquierda,alto,ancho)) {
+                        if (busquedaNodos(matGiradaIzquierda)) {
+                            matExpandor.add(matIzquierda);
+                            historial2.put(matGiradaIzquierda, matGiradaIzquierda);
+                            movimientos.add("Izquierda");
+                        }
                     }
 
                 }
@@ -215,10 +250,13 @@ public class Movimientos {
                 if (juego[posicionX][posicionY + 1] == ".") {
                     matDerecha = mueveDerechaConPunto(matDerecha, alto, ancho);
                     matGiradaDerecha = convierteMatrizString(matDerecha, alto, ancho);
-                    if(busquedaNodos(matGiradaDerecha)){
-                        matExpandor.add(matDerecha);
-                        historial2.put(matGiradaDerecha,matGiradaDerecha);
-                        movimientos.add("Derecha objetivo");
+                    //Checa si ya se encuentra en el historial
+                    if (!detectaCajasEstancadas(matDerecha,alto,ancho)) {
+                        if (busquedaNodos(matGiradaDerecha)) {
+                            matExpandor.add(matDerecha);
+                            historial2.put(matGiradaDerecha, matGiradaDerecha);
+                            movimientos.add("Derecha objetivo");
+                        }
                     }
 
 
@@ -227,10 +265,13 @@ public class Movimientos {
                 if (juego[posicionX + 1][posicionY] == ".") {
                     matAbajo = mueveAbajoConPunto(matAbajo, alto, ancho);
                     matGiradaAbajo = convierteMatrizString(matAbajo, alto, ancho);
-                    if(busquedaNodos(matGiradaAbajo)){
-                        matExpandor.add(matAbajo);
-                        historial2.put(matGiradaAbajo,matGiradaAbajo);
-                        movimientos.add("Abajo");
+                    //Checa si ya se encuentra en el historial
+                    if (!detectaCajasEstancadas(matAbajo,alto,ancho)) {
+                        if (busquedaNodos(matGiradaAbajo)) {
+                            matExpandor.add(matAbajo);
+                            historial2.put(matGiradaAbajo, matGiradaAbajo);
+                            movimientos.add("Abajo");
+                        }
                     }
 
 
@@ -239,10 +280,13 @@ public class Movimientos {
                 if (juego[posicionX - 1][posicionY] == ".") {
                     matArriba = mueveArribaConPunto(matArriba, alto, ancho);
                     matGiradaArriba = convierteMatrizString(matArriba, alto, ancho);
-                    if(busquedaNodos(matGiradaArriba)){
-                        matExpandor.add(matArriba);
-                        historial2.put(matGiradaArriba,matGiradaArriba);
-                        movimientos.add("Arriba");
+                    //Checa si ya se encuentra en el historial
+                    if (!detectaCajasEstancadas(matArriba,alto,ancho)) {
+                        if (busquedaNodos(matGiradaArriba)) {
+                            matExpandor.add(matArriba);
+                            historial2.put(matGiradaArriba, matGiradaArriba);
+                            movimientos.add("Arriba");
+                        }
                     }
 
                 }
@@ -252,10 +296,13 @@ public class Movimientos {
                     if(juego[posicionX][posicionY - 2]!="#") {
                         matIzquierda = mueveIzquierdaConPuntoCaja(matIzquierda, alto, ancho);
                         matGiradaIzquierda = convierteMatrizString(matIzquierda, alto, ancho);
-                        if(busquedaNodos(matGiradaIzquierda)){
-                            matExpandor.add(matIzquierda);
-                            historial2.put(matGiradaIzquierda,matGiradaIzquierda);
-                            movimientos.add("Izquierda");
+                        //Checa si ya se encuentra en el historial
+                        if (!detectaCajasEstancadas(matIzquierda,alto,ancho)) {
+                            if (busquedaNodos(matGiradaIzquierda)) {
+                                matExpandor.add(matIzquierda);
+                                historial2.put(matGiradaIzquierda, matGiradaIzquierda);
+                                movimientos.add("Izquierda");
+                            }
                         }
                     }
 
@@ -265,10 +312,13 @@ public class Movimientos {
                     if(juego[posicionX][posicionY + 2]!="#") {
                         matDerecha = mueveDerechaConPuntoCaja(matDerecha, alto, ancho);
                         matGiradaDerecha = convierteMatrizString(matDerecha, alto, ancho);
-                        if(busquedaNodos(matGiradaDerecha)){
-                            matExpandor.add(matDerecha);
-                            historial2.put(matGiradaDerecha,matGiradaDerecha);
-                            movimientos.add("Derecha");
+                        //Checa si ya se encuentra en el historial
+                        if (!detectaCajasEstancadas(matDerecha,alto,ancho)) {
+                            if (busquedaNodos(matGiradaDerecha)) {
+                                matExpandor.add(matDerecha);
+                                historial2.put(matGiradaDerecha, matGiradaDerecha);
+                                movimientos.add("Derecha");
+                            }
                         }
                     }
 
@@ -278,10 +328,13 @@ public class Movimientos {
                     if(juego[posicionX+2][posicionY]!="#") {
                         matAbajo = mueveAbajoConPuntoCaja(matAbajo, alto, ancho);
                         matGiradaAbajo = convierteMatrizString(matAbajo, alto, ancho);
-                        if(busquedaNodos(matGiradaAbajo)){
-                            matExpandor.add(matAbajo);
-                            historial2.put(matGiradaAbajo,matGiradaAbajo);
-                            movimientos.add("Abajo");
+                        //Checa si ya se encuentra en el historial
+                        if (!detectaCajasEstancadas(matAbajo,alto,ancho)) {
+                            if (busquedaNodos(matGiradaAbajo)) {
+                                matExpandor.add(matAbajo);
+                                historial2.put(matGiradaAbajo, matGiradaAbajo);
+                                movimientos.add("Abajo");
+                            }
                         }
                     }
 
@@ -291,10 +344,13 @@ public class Movimientos {
                     if(juego[posicionX-2][posicionY]!="#") {
                         matArriba = mueveArribaConPuntoCaja(matArriba, alto, ancho);
                         matGiradaArriba = convierteMatrizString(matArriba, alto, ancho);
-                        if(busquedaNodos(matGiradaArriba)){
-                            matExpandor.add(matArriba);
-                            historial2.put(matGiradaArriba,matGiradaArriba);
-                            movimientos.add("Arriba");
+                        //Checa si ya se encuentra en el historial
+                        if (!detectaCajasEstancadas(matArriba,alto,ancho)) {
+                            if (busquedaNodos(matGiradaArriba)) {
+                                matExpandor.add(matArriba);
+                                historial2.put(matGiradaArriba, matGiradaArriba);
+                                movimientos.add("Arriba");
+                            }
                         }
                     }
                 }
@@ -762,5 +818,21 @@ public class Movimientos {
             }
             System.out.println();
         }
+    }
+
+    public boolean detectaCajasEstancadas(String game[][], int ancho, int alto){
+        boolean ban = false;
+        for (int i = 0; i < alto; i++) {
+            for (int j = 0; j < ancho; j++) {
+                if(game[i][j]=="C"){
+                    if(game[i][j-1]=="#" && game[i-1][j]=="#" || game[i][j-1]=="#" && game[i+1][j]=="#" ||game[i][j+1]=="#" && game[i-1][j]=="#"
+                            ||game[i][j+1]=="#" && game[i+1][j]=="#"){
+                        ban=true;
+                    }
+                }
+            }
+        }
+
+        return ban;
     }
 }

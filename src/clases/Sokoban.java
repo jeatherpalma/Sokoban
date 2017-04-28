@@ -56,7 +56,7 @@ public class Sokoban {
                 if (!pilaDeNodosExpandir.isEmpty()) {
                     aux = pilaDeNodosExpandir.remove(aEstrella.getExpandir(pilaDeNodosExpandir, ancho, alto));
                     Vector<String[][]> matricesExpandir = mv.getPlayer(ancho, alto, aux.getsokoban(), resul);
-
+                    ImprimeTablero(ancho,alto,aux.getsokoban());
                     if (mv.banderaGeneral) {
 
                         break;
@@ -140,5 +140,6 @@ public class Sokoban {
             System.out.println();
         }
     }
+
 
 }

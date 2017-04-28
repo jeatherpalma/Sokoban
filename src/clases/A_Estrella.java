@@ -78,9 +78,7 @@ public class A_Estrella {
             aux=aux.getProfundidad2(aux);
 
         }
-        if (detectaCajasEstancadas(game, ancho, alto)){
-            sumaDistanciaManhattan+=1000;
-        }
+
         return sumaDistanciaManhattan;
     }
 
@@ -101,21 +99,7 @@ public class A_Estrella {
         }
     }
 
-    public boolean detectaCajasEstancadas(String game[][], int ancho, int alto){
-        boolean ban = false;
-        for (int i = 0; i < alto; i++) {
-            for (int j = 0; j < ancho; j++) {
-                if(game[i][j]=="C"){
-                    if(game[i][j-1]=="#" && game[i-1][j]=="#" || game[i][j-1]=="#" && game[i+1][j]=="#" ||game[i][j+1]=="#" && game[i-1][j]=="#"
-                            ||game[i][j+1]=="#" && game[i+1][j]=="#"){
-                        ban=true;
-                    }
-                }
-            }
-        }
 
-        return ban;
-    }
 }
 
 

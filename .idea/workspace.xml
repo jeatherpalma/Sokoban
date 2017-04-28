@@ -6,15 +6,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sokoban/clases/A_Estrella.class" afterPath="$PROJECT_DIR$/out/production/Sokoban/clases/A_Estrella.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sokoban/clases/Movimientos.class" afterPath="$PROJECT_DIR$/out/production/Sokoban/clases/Movimientos.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sokoban/clases/Sokoban.class" afterPath="$PROJECT_DIR$/out/production/Sokoban/clases/Sokoban.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sokoban/clasesArboles/Arbol.class" afterPath="$PROJECT_DIR$/out/production/Sokoban/clasesArboles/Arbol.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Sokoban/clasesArboles/Node.class" afterPath="$PROJECT_DIR$/out/production/Sokoban/clasesArboles/Node.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Test/TestSokoban.java" afterPath="$PROJECT_DIR$/src/Test/TestSokoban.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clases/A_Estrella.java" afterPath="$PROJECT_DIR$/src/clases/A_Estrella.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clases/Movimientos.java" afterPath="$PROJECT_DIR$/src/clases/Movimientos.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clases/Sokoban.java" afterPath="$PROJECT_DIR$/src/clases/Sokoban.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clasesArboles/Arbol.java" afterPath="$PROJECT_DIR$/src/clasesArboles/Arbol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/clasesArboles/Node.java" afterPath="$PROJECT_DIR$/src/clasesArboles/Node.java" />
     </list>
     <ignored path="Sokoban.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,8 +35,8 @@
       <file leaf-file-name="Sokoban.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/clases/Sokoban.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.6551725">
-              <caret line="93" column="53" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+            <state vertical-scroll-proportion="18.724138">
+              <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -64,24 +60,23 @@
         <entry file="file://$PROJECT_DIR$/src/clases/Movimientos.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="511" column="29" selection-start-line="511" selection-start-column="29" selection-end-line="511" selection-end-column="29" />
+              <caret line="353" column="25" selection-start-line="353" selection-start-column="25" selection-end-line="353" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#nuevaMatriz#0;class#Movimientos#0" expanded="false" />
-                <element signature="method#mueveDerecha#0;class#Movimientos#0" expanded="false" />
                 <element signature="method#convierteMatrizString#0;class#Movimientos#0" expanded="false" />
                 <element signature="method#convierteMatrizStringEvitaPlayer#0;class#Movimientos#0" expanded="false" />
                 <element signature="method#busquedaNodos#0;class#Movimientos#0" expanded="false" />
+                <element signature="method#detectaCajasEstancadas#0;class#Movimientos#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="A_Estrella.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="A_Estrella.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/clases/A_Estrella.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.4795418">
+              <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -101,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestSokoban.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestSokoban.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Test/TestSokoban.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7299509">
-              <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -135,10 +130,11 @@
       <list>
         <option value="$PROJECT_DIR$/src/clasesArboles/Node.java" />
         <option value="$PROJECT_DIR$/src/clasesArboles/Arbol.java" />
-        <option value="$PROJECT_DIR$/src/clases/A_Estrella.java" />
         <option value="$PROJECT_DIR$/src/clases/Movimientos.java" />
+        <option value="$PROJECT_DIR$/src/clases/A_Estrella.java" />
         <option value="$PROJECT_DIR$/src/Test/TestSokoban.java" />
         <option value="$PROJECT_DIR$/src/clases/Sokoban.java" />
+        <option value="$PROJECT_DIR$/src/Interfaz/Interfaz.java" />
       </list>
     </option>
   </component>
@@ -203,46 +199,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sokoban" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sokoban" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clasesArboles" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sokoban" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Sokoban" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clases" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -659,11 +615,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#nuevaMatriz#0;class#Movimientos#0" expanded="false" />
-            <element signature="method#mueveDerecha#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizString#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizStringEvitaPlayer#0;class#Movimientos#0" expanded="false" />
             <element signature="method#busquedaNodos#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#detectaCajasEstancadas#0;class#Movimientos#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -724,11 +679,10 @@
           <caret line="200" column="1" selection-start-line="200" selection-start-column="1" selection-end-line="200" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#nuevaMatriz#0;class#Movimientos#0" expanded="false" />
-            <element signature="method#mueveDerecha#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizString#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizStringEvitaPlayer#0;class#Movimientos#0" expanded="false" />
             <element signature="method#busquedaNodos#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#detectaCajasEstancadas#0;class#Movimientos#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -789,11 +743,10 @@
           <caret line="200" column="1" selection-start-line="200" selection-start-column="1" selection-end-line="200" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#nuevaMatriz#0;class#Movimientos#0" expanded="false" />
-            <element signature="method#mueveDerecha#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizString#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizStringEvitaPlayer#0;class#Movimientos#0" expanded="false" />
             <element signature="method#busquedaNodos#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#detectaCajasEstancadas#0;class#Movimientos#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -844,11 +797,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#nuevaMatriz#0;class#Movimientos#0" expanded="false" />
-            <element signature="method#mueveDerecha#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizString#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizStringEvitaPlayer#0;class#Movimientos#0" expanded="false" />
             <element signature="method#busquedaNodos#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#detectaCajasEstancadas#0;class#Movimientos#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -900,16 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clases/A_Estrella.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/clasesArboles/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -930,35 +872,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/clases/Sokoban.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6551725">
-          <caret line="93" column="53" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/clases/Movimientos.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="511" column="29" selection-start-line="511" selection-start-column="29" selection-end-line="511" selection-end-column="29" />
+          <caret line="353" column="25" selection-start-line="353" selection-start-column="25" selection-end-line="353" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#nuevaMatriz#0;class#Movimientos#0" expanded="false" />
-            <element signature="method#mueveDerecha#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizString#0;class#Movimientos#0" expanded="false" />
             <element signature="method#convierteMatrizStringEvitaPlayer#0;class#Movimientos#0" expanded="false" />
             <element signature="method#busquedaNodos#0;class#Movimientos#0" expanded="false" />
+            <element signature="method#detectaCajasEstancadas#0;class#Movimientos#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Test/TestSokoban.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7299509">
-          <caret line="45" column="10" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clases/Sokoban.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="18.724138">
+          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/clases/A_Estrella.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4795418">
+          <caret line="101" column="0" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
