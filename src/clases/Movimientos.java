@@ -67,7 +67,7 @@ public class Movimientos {
                         if (busquedaNodos(matGiradaIzquierda)) {
                             matExpandor.add(matIzquierda);
                             historial2.put(matGiradaIzquierda, matGiradaIzquierda);
-                            movimientos.add("Izquierda blanco");
+                            movimientos.add("Izquierda");
                         }
                     }
                 }
@@ -80,7 +80,7 @@ public class Movimientos {
                         if (busquedaNodos(matGiradaDerecha)) {
                             matExpandor.add(matDerecha);
                             historial2.put(matGiradaDerecha, matGiradaDerecha);
-                            movimientos.add("Derecha blanco");
+                            movimientos.add("Derecha");
                         }
                     }
                 }
@@ -93,7 +93,7 @@ public class Movimientos {
                         if (busquedaNodos(matGiradaAbajo)) {
                             matExpandor.add(matAbajo);
                             historial2.put(matGiradaAbajo, matGiradaAbajo);
-                            movimientos.add("Abajo blanco");
+                            movimientos.add("Abajo");
                         }
                     }
                 }
@@ -106,7 +106,7 @@ public class Movimientos {
                         if (busquedaNodos(matGiradaArriba)) {
                             matExpandor.add(matArriba);
                             historial2.put(matGiradaArriba, matGiradaArriba);
-                            movimientos.add("Arriba blanco");
+                            movimientos.add("Arriba");
                         }
                     }
                 }
@@ -122,7 +122,7 @@ public class Movimientos {
                                 if (busquedaNodos(matGiradaArriba)) {
                                     matExpandor.add(matArriba);
                                     historial2.put(matGiradaArriba, matGiradaArriba);
-                                    movimientos.add("Arriba caja");
+                                    movimientos.add("Arriba");
                                 }
                             }
                         }
@@ -134,7 +134,7 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaArriba)) {
                                 matExpandor.add(matArriba);
                                 historial2.put(matGiradaArriba, matGiradaArriba);
-                                movimientos.add("Arriba caja");
+                                movimientos.add("Arriba");
                             }
 
                         }
@@ -151,7 +151,7 @@ public class Movimientos {
                                 if (busquedaNodos(matGiradaAbajo)) {
                                     matExpandor.add(matAbajo);
                                     historial2.put(matGiradaAbajo, matGiradaAbajo);
-                                    movimientos.add("Abajo caja");
+                                    movimientos.add("Abajo");
                                 }
                             }
                         }
@@ -167,7 +167,7 @@ public class Movimientos {
 
                                 matExpandor.add(matAbajo);
                                 historial2.put(matGiradaAbajo, matGiradaAbajo);
-                                movimientos.add("Abajo caja");
+                                movimientos.add("Abajo");
                             }
                         }
                     }
@@ -184,7 +184,7 @@ public class Movimientos {
                                 if (busquedaNodos(matGiradaDerecha)) {
                                     matExpandor.add(matDerecha);
                                     historial2.put(matGiradaDerecha, matGiradaDerecha);
-                                    movimientos.add("Derecha caja");
+                                    movimientos.add("Derecha");
                                 }
                             }
                         }
@@ -196,7 +196,7 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaDerecha)) {
                                 matExpandor.add(matDerecha);
                                 historial2.put(matGiradaDerecha, matGiradaDerecha);
-                                movimientos.add("Derecha caja");
+                                movimientos.add("Derecha");
                             }
                         }
                     }
@@ -256,7 +256,7 @@ public class Movimientos {
                         if (busquedaNodos(matGiradaDerecha)) {
                             matExpandor.add(matDerecha);
                             historial2.put(matGiradaDerecha, matGiradaDerecha);
-                            movimientos.add("Derecha objetivo");
+                            movimientos.add("Derecha");
                         }
                     }
 
@@ -556,7 +556,7 @@ public class Movimientos {
                 }
                 if(mat[i][j]=="P."){
                     mat[i][j] = ".";
-                    if(mat[j][j-1]=="C"){
+                    if(mat[i][j-1]=="C"){
                         mat[i][j-1] ="P";
                     } else if(mat[i][j-1]=="C."){
                         mat[i][j-1] ="P.";
@@ -583,7 +583,7 @@ public class Movimientos {
                 }
                 if(mat[i][j]=="P."){
                     mat[i][j] = ".";
-                    if(mat[j][j+1]=="C"){
+                    if(mat[i][j+1]=="C"){
                         mat[i][j+1] ="P";
                     } else if(mat[i][j+1]=="C."){
                         mat[i][j+1] ="P.";
