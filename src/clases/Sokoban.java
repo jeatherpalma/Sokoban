@@ -136,8 +136,13 @@ public class Sokoban {
                        ImprimeTablero(ancho,alto,trayectoria.get(i));
                         for (int j=0; j<ancho; j++){
                             for (int x=0; x<alto; x++){
+                                if(trayectoria.get(i)[j][x].equals(" ")){
+                                    jTextAreaResultado.append("[ ]");
+                                }else
                                 jTextAreaResultado.append(trayectoria.get(i)[j][x]+" ");
+
                             }
+
                             jTextAreaResultado.append("\n");
                         }
                         jTextAreaResultado.append("\n");
@@ -166,11 +171,24 @@ public class Sokoban {
                         try{
                             if(movimientosSokoban[i].contains("Caja")){
 
-                                   if(movimientoConSur.contains("AbajoForzoso")){
+                                   if(i>0){
+                                       if(movimientosSokoban[i-1].equals(movimientosSokoban[i])){
+                                           movimientoConSur.add(movimientosSokoban[i]);
+                                       }else{
+                                           if(movimientoConSur.contains("AbajoForzoso")){
+                                               movimientoConSur.add(movimientosSokoban[i]);
+                                           }
+                                           movimientoConSur.add(movimientosSokoban[i]);
+                                           movimientoConSur.add("AbajoForzoso");
+                                       }
+
+                                   }else{
+                                       if(movimientoConSur.contains("AbajoForzoso")){
+                                           movimientoConSur.add(movimientosSokoban[i]);
+                                       }
                                        movimientoConSur.add(movimientosSokoban[i]);
+                                       movimientoConSur.add("AbajoForzoso");
                                    }
-                                    movimientoConSur.add(movimientosSokoban[i]);
-                                    movimientoConSur.add("AbajoForzoso");
                             }else {
                                 movimientoConSur.add(movimientosSokoban[i]);
                             }
@@ -188,7 +206,7 @@ public class Sokoban {
 
 
 
-                    char [] movimientosRCX = {'D','I','T','A','I','T','A','I','T','A','D','I','T','A','D','D','I','T','A','D','T','T','I','T','T'};
+                    char [] movimientosRCX = null;
                     Cardinalidad cardinalidad = new Cardinalidad(movimientoConSur,"Norte");
                     movimientosRCX = cardinalidad.getMovimientosRobot();
 
@@ -214,6 +232,7 @@ public class Sokoban {
         jLabelTextArea.setBounds(230,100,240,30);
         jLabelTextArea.setFont(new Font("Arial",Font.BOLD,15));
         jTextAreaResultado = new JTextArea();
+        jTextAreaResultado.setLineWrap(true);
         jScrollPaneREsultado = new JScrollPane(jTextAreaResultado);
         jScrollPaneREsultado.setBounds(230,140,300,400);
 
