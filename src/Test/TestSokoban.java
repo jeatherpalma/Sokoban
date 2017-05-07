@@ -11,22 +11,22 @@ import javax.swing.*;
 public class TestSokoban {
 
     public static void main(String[] args) {
-        String [][]game = {{"#","#","#","#","#","#","#","#"},
+        String [][]game6 = {{"#","#","#","#","#","#","#","#"},
                            {"#"," ",".",".","#","#","#","#"},
                            {"#"," ","C"," "," "," "," ","#"},
                            {"#"," "," ","#","C","#"," ","#"},
                            {"#"," ","P"," ",".","C"," ","#"},
                            {"#","#","#","#","#","#","#","#"}
         };
-        String game2 [][]={{"#","#","#","#"},
-                           {"#","."," ","#"},
+        String game1 [][]={{"#","#","#","#"},
+                           {"#",".",".","#"},
+                           {"#","C","C","#"},
                            {"#"," "," ","#"},
-                           {"#"," "," ","#"},
-                           {"#","C"," ","#"},
+                           {"#","#"," ","#"},
                            {"#","P"," ","#"},
                            {"#","#","#","#"}};
         
-        String game3 [][]={
+        String game2 [][]={
                            {"#","#","#","#","#","#"},
                            {"#","#"," "," ","#","#"},
                            {"#","P","C"," ","#","#"},
@@ -37,7 +37,7 @@ public class TestSokoban {
                            {"#","#","#","#","#","#"},
                            };
 
-        String game4 [][]={{"#","#","#","#","#","#","#","#"},
+        String game3 [][]={{"#","#","#","#","#","#","#","#"},
                            {"#",".","."," ","P"," "," ","#"},
                            {"#","C"," ","#"," "," "," ","#"},
                            {"#"," "," ","#","#","C"," ","#"},
@@ -54,8 +54,9 @@ public class TestSokoban {
         //Sokoban sk = new Sokoban(7,4,game2);
         //Sokoban sk = new Sokoban(8,6,game3);
         //Sokoban sokoban = new Sokoban(6,6,game5);
-        Sokoban sk = new Sokoban(6,6,game5);
+        //Sokoban sk = new Sokoban(6,6,game5);
         //Sokoban sk = new Sokoban(6,8,game);
-        //Sokoban sk = new Sokoban(6,8,game4);
+        //Sokoban sk = new Sokoban(6,8,game5);
+        new Sokoban();
     }
 }

@@ -24,8 +24,6 @@ public class Movimientos {
 
     public Vector<String[][]> getPlayer(int ancho, int alto, String [][] juego, String solucion){
         contador++;
-        System.out.println(contador);
-
         if(solucion.equals(convierteMatrizStringEvitaPlayer(juego, ancho, alto))){
              banderaGeneral = true;
             int contador=0;

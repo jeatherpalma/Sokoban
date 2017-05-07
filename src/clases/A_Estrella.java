@@ -28,7 +28,7 @@ public class A_Estrella {
 
 
 
-    //Metodo que emplea una suma de movimientos para estar en la posición indicada (Manhattan)
+    //h(n)=(DistanciaDeCadaCajaHaciaElDestinoMasCercano+DistanciaDelPlayerAlaCajaMasLejana)
     public int calculoDeHeuristica(String [][] game, int alto, int ancho, Node aux){
 
         int sumaDistanciaManhattan = 0;
@@ -71,7 +71,7 @@ public class A_Estrella {
         }
 
 
-        //Suma del costo para llegar al nodo a manhattan
+        //Suma del costo para llegar al nodo g(h)
         sumaDistanciaManhattan=sumaDistanciaManhattan-1;
         while(aux!=null){
             sumaDistanciaManhattan += 1;
