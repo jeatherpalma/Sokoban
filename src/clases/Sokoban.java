@@ -94,12 +94,16 @@ public class Sokoban {
                     while (mv.banderaGeneral==false) {
                         if (!pilaDeNodosExpandir.isEmpty()) {
                             aux = pilaDeNodosExpandir.remove(aEstrella.getExpandir(pilaDeNodosExpandir, ancho, alto));
+
+
+
                             Vector<String[][]> matricesExpandir = mv.getPlayer(ancho, alto, aux.getsokoban(), resul);
 
                             if (mv.banderaGeneral) {
 
                                 break;
                             }
+
 
                             for (int i = 0; i < matricesExpandir.size(); i++) {
 
@@ -129,6 +133,7 @@ public class Sokoban {
 
                     for (int i=trayectoria.size()-1; i>=0; i--)
                     {
+                       ImprimeTablero(ancho,alto,trayectoria.get(i));
                         for (int j=0; j<ancho; j++){
                             for (int x=0; x<alto; x++){
                                 jTextAreaResultado.append(trayectoria.get(i)[j][x]+" ");
@@ -137,12 +142,66 @@ public class Sokoban {
                         }
                         jTextAreaResultado.append("\n");
 
+
+                    }
+                    String movimientosSokoban [] = new String[movi.size()];
+                    for (int i=movi.size()-1; i>=0; i--){
+                        movimientosSokoban[i]=movi.get(i);
+
                     }
 
-                    for (int i=movi.size()-1; i>=0; i--){
-                        jTextAreaMovimientos.append(movi.get(i));
-                        jTextAreaMovimientos.append("\n");
+                    for(int i=movimientosSokoban.length-1; i>=0; i--){
+                        jTextAreaMovimientos.append(movimientosSokoban[i]+"\n");
                     }
+                    jTextAreaMovimientos.append("\n");
+
+
+                    boolean bandAbajo = false;
+
+                    Vector <String> movimientoConSur = new Vector<String>();
+
+                    for(int i=movimientosSokoban.length-2; i>=0; i--){
+
+
+                        try{
+                            if(movimientosSokoban[i].contains("Caja")){
+
+                                   if(movimientoConSur.contains("AbajoForzoso")){
+                                       movimientoConSur.add(movimientosSokoban[i]);
+                                   }
+                                    movimientoConSur.add(movimientosSokoban[i]);
+                                    movimientoConSur.add("AbajoForzoso");
+                            }else {
+                                movimientoConSur.add(movimientosSokoban[i]);
+                            }
+                        }catch (Exception es){
+
+                        }
+
+
+                    }
+
+                    for(int i=0; i<movimientoConSur.size()-1; i++){
+                        System.out.println(movimientoConSur.get(i));
+                    }
+
+
+
+
+                    char [] movimientosRCX = {'D','I','T','A','I','T','A','I','T','A','D','I','T','A','D','D','I','T','A','D','T','T','I','T','T'};
+                    Cardinalidad cardinalidad = new Cardinalidad(movimientoConSur,"Norte");
+                    movimientosRCX = cardinalidad.getMovimientosRobot();
+
+                    System.out.println("Movimientos reales");
+                    System.out.print("{");
+                    for(int i=0; i<movimientosRCX.length-1; i++){
+                        if (i==movimientosRCX.length-1){
+                            System.out.print("'"+movimientosRCX[i]+"'");
+                        }else
+                        System.out.print("'"+movimientosRCX[i]+"',");
+                    }
+                    System.out.println("}");
+
 
                 }catch (IndexOutOfBoundsException ie){
                     ie.printStackTrace();
@@ -193,14 +252,15 @@ public class Sokoban {
         //Creando la solución
         for (int i=0; i<tableroLineal.length(); i++){
 
-            if(tableroLineal.charAt(i)=='C' ||tableroLineal.charAt(i)=='P' || tableroLineal.charAt(i)==' ' ){
+            if(tableroLineal.charAt(i)=='C' ||tableroLineal.charAt(i)=='P' ||tableroLineal.charAt(i)==' '){
 
             }else if(tableroLineal.charAt(i)=='.'){
-                solucion+="C.";
+                solucion+="X";
             }else{
                 solucion+=tableroLineal.charAt(i);
             }
         }
+        System.out.println(solucion);
         return solucion;
     }
    public String getTableroLineal(int ancho, int alto, String game [][]){

@@ -1,5 +1,6 @@
 package clases;
 
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Vector;
@@ -24,8 +25,11 @@ public class Movimientos {
     public Vector<String[][]> getPlayer(int ancho, int alto, String [][] juego, String solucion){
         contador++;
         System.out.println(contador);
+
         if(solucion.equals(convierteMatrizStringEvitaPlayer(juego, ancho, alto))){
              banderaGeneral = true;
+            int contador=0;
+
 
         }else {
             matExpandor.removeAllElements();
@@ -113,7 +117,7 @@ public class Movimientos {
 
                 //Mueve la caja arriba
                 if (juego[posicionX - 1][posicionY] == "C") {
-                    if(juego[posicionX-2][posicionY]!="#" && juego[posicionX-2][posicionY]!=" " ){
+                    if(juego[posicionX-2][posicionY]!="#" && juego[posicionX-2][posicionY]!=" " && juego[posicionX-2][posicionY]!="X"){
                         if(juego[posicionX-2][posicionY]=="."){
                             matArriba = mueveCajaArriba(matArriba, alto, ancho);
                             matGiradaArriba = convierteMatrizString(matArriba, alto, ancho);
@@ -122,7 +126,7 @@ public class Movimientos {
                                 if (busquedaNodos(matGiradaArriba)) {
                                     matExpandor.add(matArriba);
                                     historial2.put(matGiradaArriba, matGiradaArriba);
-                                    movimientos.add("Arriba");
+                                    movimientos.add("ArribaCaja");
                                 }
                             }
                         }
@@ -134,7 +138,7 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaArriba)) {
                                 matExpandor.add(matArriba);
                                 historial2.put(matGiradaArriba, matGiradaArriba);
-                                movimientos.add("Arriba");
+                                movimientos.add("ArribaCaja");
                             }
 
                         }
@@ -142,7 +146,7 @@ public class Movimientos {
                 }
                 //Mueve la caja abajo
                 if (juego[posicionX +1][posicionY] == "C") {
-                    if(juego[posicionX+2][posicionY]!="#"&& juego[posicionX+2][posicionY]!=" " ){
+                    if(juego[posicionX+2][posicionY]!="#"&& juego[posicionX+2][posicionY]!=" " && juego[posicionX+2][posicionY]!="X" ){
                         if(juego[posicionX+2][posicionY]=="."){
                             matAbajo = mueveCajaAbajo(matAbajo, alto, ancho);
                             matGiradaAbajo = convierteMatrizString(matAbajo, alto, ancho);
@@ -151,7 +155,7 @@ public class Movimientos {
                                 if (busquedaNodos(matGiradaAbajo)) {
                                     matExpandor.add(matAbajo);
                                     historial2.put(matGiradaAbajo, matGiradaAbajo);
-                                    movimientos.add("Abajo");
+                                    movimientos.add("AbajoCaja");
                                 }
                             }
                         }
@@ -167,7 +171,7 @@ public class Movimientos {
 
                                 matExpandor.add(matAbajo);
                                 historial2.put(matGiradaAbajo, matGiradaAbajo);
-                                movimientos.add("Abajo");
+                                movimientos.add("AbajoCaja");
                             }
                         }
                     }
@@ -175,7 +179,7 @@ public class Movimientos {
 
                 //Mueve la caja derecha
                 if (juego[posicionX][posicionY + 1] == "C") {
-                    if(juego[posicionX][posicionY + 2]!="#"&& juego[posicionX][posicionY+2]!=" " ){
+                    if(juego[posicionX][posicionY + 2]!="#"&& juego[posicionX][posicionY+2]!=" "  && juego[posicionX][posicionY + 2]!="X"){
                         if(juego[posicionX][posicionY+2]==".") {
                             matDerecha = mueveCajaDerecha(matDerecha, alto, ancho);
                             matGiradaDerecha = convierteMatrizString(matDerecha, alto, ancho);
@@ -184,7 +188,7 @@ public class Movimientos {
                                 if (busquedaNodos(matGiradaDerecha)) {
                                     matExpandor.add(matDerecha);
                                     historial2.put(matGiradaDerecha, matGiradaDerecha);
-                                    movimientos.add("Derecha");
+                                    movimientos.add("DerechaCaja");
                                 }
                             }
                         }
@@ -196,7 +200,7 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaDerecha)) {
                                 matExpandor.add(matDerecha);
                                 historial2.put(matGiradaDerecha, matGiradaDerecha);
-                                movimientos.add("Derecha");
+                                movimientos.add("DerechaCaja");
                             }
                         }
                     }
@@ -204,7 +208,7 @@ public class Movimientos {
 
                 //Mueve la caja izquierda
                 if (juego[posicionX][posicionY - 1] == "C") {
-                    if(juego[posicionX][posicionY - 2]!="#"&& juego[posicionX][posicionY-2]!=" " ){
+                    if(juego[posicionX][posicionY - 2]!="#"&& juego[posicionX][posicionY-2]!=" " && juego[posicionX][posicionY - 2]!="X" ){
                         if(juego[posicionX][posicionY-2]==".") {
                             matIzquierda = mueveCajaIzquierda(matIzquierda, alto, ancho);
                             matGiradaIzquierda = convierteMatrizString(matIzquierda, alto, ancho);
@@ -213,7 +217,7 @@ public class Movimientos {
                                 if (busquedaNodos(matGiradaIzquierda)) {
                                     matExpandor.add(matIzquierda);
                                     historial2.put(matGiradaIzquierda, matGiradaIzquierda);
-                                    movimientos.add("Izquierda");
+                                    movimientos.add("IzquierdaCaja");
                                 }
                             }
                         }
@@ -226,7 +230,7 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaIzquierda)) {
                                 matExpandor.add(matIzquierda);
                                 historial2.put(matGiradaIzquierda, matGiradaIzquierda);
-                                movimientos.add("Izquierda");
+                                movimientos.add("IzquierdaCaja");
                             }
                         }
                     }
@@ -293,8 +297,8 @@ public class Movimientos {
                 }
 
                 //Mueve caja en Objetivo izquierda
-                if (juego[posicionX][posicionY - 1] == "C.") {
-                    if(juego[posicionX][posicionY - 2]!="#") {
+                if (juego[posicionX][posicionY - 1] == "X") {
+                    if(juego[posicionX][posicionY - 2]!="#" && juego[posicionX][posicionY - 2]!="X" ) {
                         matIzquierda = mueveIzquierdaConPuntoCaja(matIzquierda, alto, ancho);
                         matGiradaIzquierda = convierteMatrizString(matIzquierda, alto, ancho);
                         //Checa si ya se encuentra en el historial
@@ -302,15 +306,15 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaIzquierda)) {
                                 matExpandor.add(matIzquierda);
                                 historial2.put(matGiradaIzquierda, matGiradaIzquierda);
-                                movimientos.add("Izquierda");
+                                movimientos.add("IzquierdaCaja");
                             }
                         }
                     }
 
                 }
                 //Mueve caja con Objetivo derecha
-                if (juego[posicionX][posicionY + 1] == "C.") {
-                    if(juego[posicionX][posicionY + 2]!="#") {
+                if (juego[posicionX][posicionY + 1] == "X") {
+                    if(juego[posicionX][posicionY + 2]!="#" && juego[posicionX][posicionY + 2]!="X") {
                         matDerecha = mueveDerechaConPuntoCaja(matDerecha, alto, ancho);
                         matGiradaDerecha = convierteMatrizString(matDerecha, alto, ancho);
                         //Checa si ya se encuentra en el historial
@@ -318,15 +322,15 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaDerecha)) {
                                 matExpandor.add(matDerecha);
                                 historial2.put(matGiradaDerecha, matGiradaDerecha);
-                                movimientos.add("Derecha");
+                                movimientos.add("DerechaCaja");
                             }
                         }
                     }
 
                 }
                 //Mueve caja con objetivo abajo
-                if (juego[posicionX + 1][posicionY] == "C.") {
-                    if(juego[posicionX+2][posicionY]!="#") {
+                if (juego[posicionX + 1][posicionY] == "X") {
+                    if(juego[posicionX+2][posicionY]!="#"&& juego[posicionX+2][posicionY]!="X") {
                         matAbajo = mueveAbajoConPuntoCaja(matAbajo, alto, ancho);
                         matGiradaAbajo = convierteMatrizString(matAbajo, alto, ancho);
                         //Checa si ya se encuentra en el historial
@@ -334,15 +338,15 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaAbajo)) {
                                 matExpandor.add(matAbajo);
                                 historial2.put(matGiradaAbajo, matGiradaAbajo);
-                                movimientos.add("Abajo");
+                                movimientos.add("AbajoCaja");
                             }
                         }
                     }
 
                 }
                 //Mueve caja con objetivo Arriba
-                if (juego[posicionX - 1][posicionY] == "C.") {
-                    if(juego[posicionX-2][posicionY]!="#") {
+                if (juego[posicionX - 1][posicionY] == "X") {
+                    if(juego[posicionX-2][posicionY]!="#"&& juego[posicionX-2][posicionY]!="X") {
                         matArriba = mueveArribaConPuntoCaja(matArriba, alto, ancho);
                         matGiradaArriba = convierteMatrizString(matArriba, alto, ancho);
                         //Checa si ya se encuentra en el historial
@@ -350,7 +354,7 @@ public class Movimientos {
                             if (busquedaNodos(matGiradaArriba)) {
                                 matExpandor.add(matArriba);
                                 historial2.put(matGiradaArriba, matGiradaArriba);
-                                movimientos.add("Arriba");
+                                movimientos.add("ArribaCaja");
                             }
                         }
                     }
@@ -470,7 +474,7 @@ public class Movimientos {
         String puzzleConcertido ="";
         for (int i=0; i<ancho; i++){
             for (int j=0; j<alto; j++){
-                if(mat[i][j]=="#" || mat[i][j]=="C" || mat[i][j]=="C." || mat[i][j]=="."){
+                if(mat[i][j]=="#" || mat[i][j]=="C" || mat[i][j]=="X" || mat[i][j]=="."){
                     puzzleConcertido+=mat[i][j];
                 }
             }
@@ -495,7 +499,7 @@ public class Movimientos {
                 if(mat[i][j]=="P"){
                         mat[i][j] = " ";
                         mat[i - 1][j] = "P";
-                        mat[i - 2][j] = "C.";
+                        mat[i - 2][j] = "X";
                         i = alto;
                         break;
 
@@ -504,10 +508,10 @@ public class Movimientos {
                     mat[i][j] = ".";
                     if(mat[i - 1][j]=="C"){
                         mat[i - 1][j] ="P";
-                    } else if(mat[i - 1][j]=="C."){
+                    } else if(mat[i - 1][j]=="X"){
                         mat[i - 1][j] ="P.";
                     }
-                    mat[i - 2][j] = "C.";
+                    mat[i - 2][j] = "X";
                     i = alto;
                     break;
 
@@ -522,7 +526,7 @@ public class Movimientos {
                 if(mat[i][j]=="P"){
                         mat[i][j] = " ";
                         mat[i + 1][j] = "P";
-                        mat[i + 2][j] = "C.";
+                        mat[i + 2][j] = "X";
                         i = alto;
                         break;
 
@@ -531,10 +535,10 @@ public class Movimientos {
                     mat[i][j] = ".";
                     if(mat[i + 1][j]=="C"){
                         mat[i+1][j] ="P";
-                    } else if(mat[i + 1][j]=="C."){
+                    } else if(mat[i + 1][j]=="X"){
                         mat[i +1][j] ="P.";
                     }
-                    mat[i+2][j] = "C.";
+                    mat[i+2][j] = "X";
                     i = alto;
                     break;
 
@@ -550,7 +554,7 @@ public class Movimientos {
                 if(mat[i][j]=="P"){
                     mat[i][j] = " ";
                     mat[i][j-1]="P";
-                    mat[i][j-2]="C.";
+                    mat[i][j-2]="X";
                     i=alto;
                     break;
                 }
@@ -558,10 +562,10 @@ public class Movimientos {
                     mat[i][j] = ".";
                     if(mat[i][j-1]=="C"){
                         mat[i][j-1] ="P";
-                    } else if(mat[i][j-1]=="C."){
+                    } else if(mat[i][j-1]=="X"){
                         mat[i][j-1] ="P.";
                     }
-                    mat[i][j-2] = "C.";
+                    mat[i][j-2] = "X";
                     i = alto;
                     break;
 
@@ -577,7 +581,7 @@ public class Movimientos {
                 if(mat[i][j]=="P"){
                     mat[i][j] = " ";
                     mat[i][j+1]="P";
-                    mat[i][j+2]="C.";
+                    mat[i][j+2]="X";
                     i=alto;
                     break;
                 }
@@ -585,10 +589,10 @@ public class Movimientos {
                     mat[i][j] = ".";
                     if(mat[i][j+1]=="C"){
                         mat[i][j+1] ="P";
-                    } else if(mat[i][j+1]=="C."){
+                    } else if(mat[i][j+1]=="X"){
                         mat[i][j+1] ="P.";
                     }
-                    mat[i][j+2] = "C.";
+                    mat[i][j+2] = "X";
                     i = alto;
                     break;
 
@@ -776,7 +780,7 @@ public class Movimientos {
                     if(mat[i][j-2].equals(" ")) {
                         mat[i][j-2]="C";
                     }else if(mat[i][j-2].equals(".")){
-                        mat[i][j-2]="C.";
+                        mat[i][j-2]="X";
                     }
                     i=alto;
                     break;
@@ -787,7 +791,7 @@ public class Movimientos {
                     if(mat[i][j-2].equals(" ")) {
                         mat[i][j-2]="C";
                     }else if(mat[i][j-2].equals(".")){
-                        mat[i][j-2]="C.";
+                        mat[i][j-2]="X";
                     }
                     i=alto;
                     break;
@@ -806,7 +810,7 @@ public class Movimientos {
                     if(mat[i][j+2].equals(" ")) {
                         mat[i][j+2]="C";
                     }else if(mat[i][j+2].equals(".")){
-                        mat[i][j+2]="C.";
+                        mat[i][j+2]="X";
                     }
                     i=alto;
                     break;
@@ -817,7 +821,7 @@ public class Movimientos {
                     if(mat[i][j+2].equals(" ")) {
                         mat[i][j+2]="C";
                     }else if(mat[i][j+2].equals(".")){
-                        mat[i][j+2]="C.";
+                        mat[i][j+2]="X";
                     }
                     i=alto;
                     break;
@@ -836,7 +840,7 @@ public class Movimientos {
                     if(mat[i-2][j].equals(" ")) {
                         mat[i-2][j]="C";
                     }else if(mat[i-2][j].equals(".")){
-                        mat[i-2][j]="C.";
+                        mat[i-2][j]="X";
                     }
                     i=alto;
                     break;
@@ -846,7 +850,7 @@ public class Movimientos {
                     if(mat[i-2][j].equals(" ")) {
                         mat[i-2][j]="C";
                     }else if(mat[i-2][j].equals(".")){
-                        mat[i-2][j]="C.";
+                        mat[i-2][j]="X";
                     }
                     i=alto;
                     break;
@@ -865,7 +869,7 @@ public class Movimientos {
                     if(mat[i+2][j].equals(" ")) {
                         mat[i+2][j]="C";
                     }else if(mat[i+2][j].equals(".")){
-                        mat[i+2][j]="C.";
+                        mat[i+2][j]="X";
                     }
                     i=alto;
                     break;
@@ -875,7 +879,7 @@ public class Movimientos {
                     if(mat[i+2][j].equals(" ")) {
                         mat[i+2][j]="C";
                     }else if(mat[i+2][j].equals(".")){
-                        mat[i+2][j]="C.";
+                        mat[i+2][j]="X";
                     }
                     i=alto;
                     break;
